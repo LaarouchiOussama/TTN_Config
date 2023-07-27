@@ -3,7 +3,7 @@ services:
 
   postgres:
     # In production, replace 'latest' with tag from https://hub.docker.com/_/postgres?tab=tags
-    image: postgres:14
+    image: postgres:14-alpine
     restart: unless-stopped
     environment:
       - POSTGRES_PASSWORD=root
@@ -16,7 +16,7 @@ services:
 
   redis:
     # In production, replace 'latest' with tag from https://hub.docker.com/_/redis?tab=tags
-    image: redis:7
+    image: redis:7-alpine
     command: redis-server --appendonly yes
     restart: unless-stopped
     volumes:
