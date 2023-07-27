@@ -1,13 +1,13 @@
 # Identity Server configuration
-# Email configuration for "192.168.1.x"
+# Email configuration for "192.168.1.155"
 is:
   email:
     sender-name: "The Things Stack"
-    sender-address: "noreply@192.168.1.x"
+    sender-address: "noreply@192.168.1.155"
     network:
       name: "The Things Stack"
-      console-url: "https://192.168.1.x:8885/console"
-      identity-server-url: "https://192.168.1.x:8885/oauth"
+      console-url: "https://192.168.1.155:8885/console"
+      identity-server-url: "https://192.168.1.155:8885/oauth"
 
     # If sending email with Sendgrid
     # provider: sendgrid
@@ -21,18 +21,18 @@ is:
     #   username: '...'             # enter SMTP server username
     #   password: '...'             # enter SMTP server password
 
-  # Web UI configuration for "192.168.1.x":
+  # Web UI configuration for "192.168.1.155":
   oauth:
     ui:
-      canonical-url: "https://192.168.1.x/oauth"
+      canonical-url: "https://192.168.1.155/oauth"
       is:
-        base-url: "https://192.168.1.x/api/v3"
+        base-url: "https://192.168.1.155/api/v3"
 
 # HTTP server configuration
 http:
   cookie:
-    block-key: "52a16798ec0ca9e5795c5237fa6175a63ef6ebd136336010fd76706785d2cf1d" # generate 32 bytes (openssl rand -hex 32)
-    hash-key: "453d45a19c540486d6f35a12c48a70d427b2c424c1577x59e9fb0eb7cd7f35d48d633026e4f5a4031925ab464b8bb05b144393e88a907c9c9dbbad00740d4b0" # generate 64 bytes (openssl rand -hex 64)
+    block-key: "52a16798ec0ca9e5795c5237fa6175a63ef6ebd136336010fd76706785d2cf1d" # generate 32 bytes (openssl rand -he155 32)
+    hash-key: "453d45a19c540486d6f35a12c48a70d427b2c424c157715559e9fb0eb7cd7f35d48d633026e4f5a4031925ab464b8bb05b144393e88a907c9c9dbbad00740d4b0" # generate 64 bytes (openssl rand -he155 64)
   metrics:
     password: "metrics" # choose a password
   pprof:
@@ -45,87 +45,87 @@ tls:
   certificate: /run/secrets/cert.pem
   key: /run/secrets/key.pem
 
-# Let's encrypt for "192.168.1.x"
+# Let's encrypt for "192.168.1.155"
 # tls:
 #   source: "acme"
 #   acme:
 #     dir: "/var/lib/acme"
-#     email: "you@192.168.1.x"
-#     hosts: ["192.168.1.x"]
-#     default-host: "192.168.1.x"
+#     email: "you@192.168.1.155"
+#     hosts: ["192.168.1.155"]
+#     default-host: "192.168.1.155"
 
-# If Gateway Server enabled, defaults for "192.168.1.x":
+# If Gateway Server enabled, defaults for "192.168.1.155":
 gs:
   mqtt:
-    public-address: "192.168.1.x:1882"
-    public-tls-address: "192.168.1.x:8882"
+    public-address: "192.168.1.155:1882"
+    public-tls-address: "192.168.1.155:8882"
   mqtt-v2:
-    public-address: "192.168.1.x:1881"
-    public-tls-address: "192.168.1.x:8881"
+    public-address: "192.168.1.155:1881"
+    public-tls-address: "192.168.1.155:8881"
 
-# If Gateway Configuration Server enabled, defaults for "192.168.1.x":
+# If Gateway Configuration Server enabled, defaults for "192.168.1.155":
 gcs:
   basic-station:
     default:
-      lns-uri: "wss://192.168.1.x:8887"
+      lns-uri: "wss://192.168.1.155:8887"
   the-things-gateway:
     default:
-      mqtt-server: "mqtts://192.168.1.x:8881"
+      mqtt-server: "mqtts://192.168.1.155:8881"
 
-# Web UI configuration for "192.168.1.x":
+# Web UI configuration for "192.168.1.155":
 console:
   ui:
-    canonical-url: "https://192.168.1.x:8885/console"
-    account-url: "https://192.168.1.x:8885/console"
+    canonical-url: "https://192.168.1.155:8885/console"
+    account-url: "https://192.168.1.155:8885/console"
     is:
-      base-url: "https://192.168.1.x:8885/api/v3"
+      base-url: "https://192.168.1.155:8885/api/v3"
     gs:
-      base-url: "https://192.168.1.x:8885/api/v3"
+      base-url: "https://192.168.1.155:8885/api/v3"
     gcs:
-      base-url: "https://192.168.1.x:8885/api/v3"
+      base-url: "https://192.168.1.155:8885/api/v3"
     ns:
-      base-url: "https://192.168.1.x:8885/api/v3"
+      base-url: "https://192.168.1.155:8885/api/v3"
     as:
-      base-url: "https://192.168.1.x:8885/api/v3"
+      base-url: "https://192.168.1.155:8885/api/v3"
     js:
-      base-url: "https://192.168.1.x:8885/api/v3"
+      base-url: "https://192.168.1.155:8885/api/v3"
     qrg:
-      base-url: "https://192.168.1.x:8885/api/v3"
+      base-url: "https://192.168.1.155:8885/api/v3"
     edtc:
-      base-url: "https://192.168.1.x:8885/api/v3"
+      base-url: "https://192.168.1.155:8885/api/v3"
     dcs:
-      base-url: "https://192.168.1.x:8885/api/v3"
+      base-url: "https://192.168.1.155:8885/api/v3"
   oauth:
-    authorize-url: "https://192.168.1.x:8885/oauth/authorize"
-    token-url: "https://192.168.1.x:8885/oauth/token"
-    logout-url: "https://192.168.1.x:8885/oauth/logout"
+    authorize-url: "https://192.168.1.155:8885/oauth/authorize"
+    token-url: "https://192.168.1.155:8885/oauth/token"
+    logout-url: "https://192.168.1.155:8885/oauth/logout"
     client-id: "console"
     client-secret: "123456789" # choose or generate a secret
 
-# If Application Server enabled, defaults for "192.168.1.x":
+# If Application Server enabled, defaults for "192.168.1.155":
 as:
   mqtt:
-    public-address: "192.168.1.x:1883"
-    public-tls-address: "192.168.1.x:8883"
+    public-address: "192.168.1.155:1883"
+    public-tls-address: "192.168.1.155:8883"
   webhooks:
     downlink:
-      public-address: "192.168.1.x:1885/api/v3"
+      public-address: "192.168.1.155:1885/api/v3"
 
-# If Device Claiming Server enabled, defaults for "192.168.1.x":
+# If Device Claiming Server enabled, defaults for "192.168.1.155":
 dcs:
   oauth:
-    authorize-url: "https://192.168.1.x/oauth/authorize"
-    token-url: "https://192.168.1.x/oauth/token"
-    logout-url: "https://192.168.1.x/oauth/logout"
+    authorize-url: "https://192.168.1.155/oauth/authorize"
+    token-url: "https://192.168.1.155/oauth/token"
+    logout-url: "https://192.168.1.155/oauth/logout"
     client-id: "device-claiming"
     client-secret: "device-claiming" # choose or generate a secret
   ui:
-    canonical-url: "https://192.168.1.x/claim"
+    canonical-url: "https://192.168.1.155/claim"
     as:
-      base-url: "https://192.168.1.x/api/v3"
+      base-url: "https://192.168.1.155/api/v3"
     dcs:
-      base-url: "https://192.168.1.x/api/v3"
+      base-url: "https://192.168.1.155/api/v3"
     is:
-      base-url: "https://192.168.1.x/api/v3"
+      base-url: "https://192.168.1.155/api/v3"
     ns:
-      base-url: "https://192.168.1.x/api/v3"
+      base-url: "https://192.168.1.155/api/v3"

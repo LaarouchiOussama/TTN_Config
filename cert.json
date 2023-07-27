@@ -1,5 +1,5 @@
 {
-    "hosts": ["192.168.1.x"],
+    "hosts": ["192.168.1.155"],
     "names": [
       {"C": "NL", "ST": "Noord-Holland", "L": "Amsterdam", "O": "The Things Demo"}
     ]

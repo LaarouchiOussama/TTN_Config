@@ -26,17 +26,11 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 
-- Install go
+- Install `cfssl`:
 
 ```
-sudo snap install go --classic
-```
+sudo apt install golang-cfssl
 
-- Install `cfssl` and `cfssljson`:
-
-```
-go get -u github.com/cloudflare/cfssl/cmd/cfssl
-go get -u github.com/cloudflare/cfssl/cmd/cfssljson
 ```
 
 
