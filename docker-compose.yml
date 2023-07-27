@@ -26,7 +26,7 @@ services:
 
   stack:
     # In production, replace 'latest' with tag from https://hub.docker.com/r/thethingsnetwork/lorawan-stack/tags
-    image: thethingsnetwork/lorawan-stack:latest
+    image: thethingsnetwork/lorawan-stack:3.26.2
     entrypoint: ttn-lw-stack -c /config/ttn-lw-stack-docker.yml
     command: start
     restart: unless-stopped
@@ -42,13 +42,13 @@ services:
       TTN_LW_BLOB_LOCAL_DIRECTORY: /srv/ttn-lorawan/public/blob
       TTN_LW_REDIS_ADDRESS: redis:6379
       TTN_LW_IS_DATABASE_URI: postgres://root:root@postgres:5432/ttn_lorawan?sslmode=disable
-      TTN_LW_APPLICATION_SERVER_GRPC_ADDRESS: 192.168.1.x:8884
-      TTN_LW_DEVICE_TEMPLATE_CONVERTER_GRPC_ADDRESS: 192.168.1.x:8884
-      TTN_LW_GATEWAY_SERVER_GRPC_ADDRESS: 192.168.1.x:8884
-      TTN_LW_IDENTITY_SERVER_GRPC_ADDRESS: 192.168.1.x:8884
-      TTN_LW_JOIN_SERVER_GRPC_ADDRESS: 192.168.1.x:8884
-      TTN_LW_NETWORK_SERVER_GRPC_ADDRESS: 192.168.1.x:8884
-      TTN_LW_OAUTH_SERVER_ADDRESS: https://192.168.1.x:8885/oauth
+      TTN_LW_APPLICATION_SERVER_GRPC_ADDRESS: 192.168.1.155:8884
+      TTN_LW_DEVICE_TEMPLATE_CONVERTER_GRPC_ADDRESS: 192.168.1.155:8884
+      TTN_LW_GATEWAY_SERVER_GRPC_ADDRESS: 192.168.1.155:8884
+      TTN_LW_IDENTITY_SERVER_GRPC_ADDRESS: 192.168.1.155:8884
+      TTN_LW_JOIN_SERVER_GRPC_ADDRESS: 192.168.1.155:8884
+      TTN_LW_NETWORK_SERVER_GRPC_ADDRESS: 192.168.1.155:8884
+      TTN_LW_OAUTH_SERVER_ADDRESS: https://192.168.1.155:8885/oauth
 
     ports:
       # If deploying on a public server:
