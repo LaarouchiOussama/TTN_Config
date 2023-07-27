@@ -31,8 +31,8 @@ is:
 # HTTP server configuration
 http:
   cookie:
-    block-key: "52a16798ec0ca9e5795c5237fa6175a63ef6ebd136336010fd76706785d2cf1d" # generate 32 bytes (openssl rand -he155 32)
-    hash-key: "453d45a19c540486d6f35a12c48a70d427b2c424c157715559e9fb0eb7cd7f35d48d633026e4f5a4031925ab464b8bb05b144393e88a907c9c9dbbad00740d4b0" # generate 64 bytes (openssl rand -he155 64)
+    block-key: "52a16798ec0ca9e5795c5237fa6175a63ef6ebd136336010fd76706785d2cf1d" # generate 32 bytes (openssl rand -hex 32)
+    hash-key: "453d45a19c540486d6f35a12c48a70d427b2c424c15777159e9fb0eb7cd7f35d48d633026e4f5a4031925ab464b8bb05b144393e88a907c9c9dbbad00740d4b0" # generate 64 bytes (openssl rand -hex 64)
   metrics:
     password: "metrics" # choose a password
   pprof:
